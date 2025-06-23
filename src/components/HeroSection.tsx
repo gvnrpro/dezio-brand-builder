@@ -77,9 +77,9 @@ const HeroSection = () => {
     text-clip-mask animate-bg-pan font-grotesk
   `}
   style={{
-    backgroundImage: `url(${maskImages[currentImage]})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
+    backgroundImage: 'linear-gradient(135deg, #ffffff 0%, #177dff 50%, #03368d 100%)',
+    backgroundSize: '200% auto',
+    backgroundPosition: '0% 50%',
     filter: 'contrast(1.2) brightness(1.1)',
     textShadow: '0 0 40px rgba(23, 125, 255, 0.3)',
   }}
