@@ -1,11 +1,36 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useEffect, useState } from 'react';
+import SplashScreen from '@/components/SplashScreen';
+import HeroSection from '@/components/HeroSection';
+import StatementSection from '@/components/StatementSection';
+import VisualScrollSection from '@/components/VisualScrollSection';
+import ServicesGrid from '@/components/ServicesGrid';
+import AboutSection from '@/components/AboutSection';
+import ClientLogoScroll from '@/components/ClientLogoScroll';
+import ContactSection from '@/components/ContactSection';
 
 const Index = () => {
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="font-poppins">
+      {showSplash && <SplashScreen />}
+      <div className={`${showSplash ? 'opacity-0' : 'opacity-100'} transition-opacity duration-1000`}>
+        <HeroSection />
+        <StatementSection />
+        <VisualScrollSection />
+        <ServicesGrid />
+        <AboutSection />
+        <ClientLogoScroll />
+        <ContactSection />
       </div>
     </div>
   );
