@@ -34,40 +34,62 @@ const VisualScrollSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div 
           ref={leftRef}
-          className={`relative h-[60vh] overflow-hidden transition-all duration-1000 ${
-            leftVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+          className={`relative h-[70vh] overflow-hidden group transition-all duration-1000 ${
+            leftVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
           }`}
         >
           <img
-            src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&q=80"
+            src="/service-scale-modeling.jpg"
             alt="Scale Modeling"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-black/20 flex items-end">
-            <div className="p-8">
-              <h3 className="text-3xl font-bold text-white mb-2">Scale Modeling</h3>
-              <p className="text-white/80 font-medium">Precision crafted architectural models</p>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+          <div className="absolute inset-0 flex items-end">
+            <div className="p-12 w-full">
+              <div className="mb-4">
+                <div className="w-16 h-0.5 bg-white mb-4" />
+                <h3 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
+                  Scale Modeling
+                </h3>
+                <p className="text-white/90 text-lg font-medium max-w-md leading-relaxed">
+                  Precision-crafted architectural models that bring concepts to life with meticulous attention to detail.
+                </p>
+              </div>
             </div>
           </div>
+          
+          {/* Hover Effect */}
+          <div className="absolute top-0 right-0 w-0 h-full bg-deziro-blue/20 transition-all duration-500 group-hover:w-full" />
         </div>
 
         <div 
           ref={rightRef}
-          className={`relative h-[60vh] overflow-hidden transition-all duration-1000 ${
-            rightVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+          className={`relative h-[70vh] overflow-hidden group transition-all duration-1000 ${
+            rightVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
           }`}
         >
           <img
-            src="https://images.unsplash.com/photo-1551038247-3d9af20df552?w=800&q=80"
+            src="/service-lighting.jpg"
             alt="Conceptual Lighting"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-black/20 flex items-end">
-            <div className="p-8">
-              <h3 className="text-3xl font-bold text-white mb-2">Conceptual Lighting</h3>
-              <p className="text-white/80 font-medium">Illuminating spaces with artistic vision</p>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+          <div className="absolute inset-0 flex items-end">
+            <div className="p-12 w-full">
+              <div className="mb-4">
+                <div className="w-16 h-0.5 bg-white mb-4" />
+                <h3 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
+                  Conceptual Lighting
+                </h3>
+                <p className="text-white/90 text-lg font-medium max-w-md leading-relaxed">
+                  Illuminating spaces with artistic vision that transforms environments through innovative lighting design.
+                </p>
+              </div>
             </div>
           </div>
+          
+          {/* Hover Effect */}
+          <div className="absolute top-0 left-0 w-0 h-full bg-deziro-blue/20 transition-all duration-500 group-hover:w-full" />
         </div>
       </div>
     </section>

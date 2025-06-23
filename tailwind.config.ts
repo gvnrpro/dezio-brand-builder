@@ -76,6 +76,16 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			fontSize: {
+				'fluid-sm': 'clamp(0.875rem, 2vw, 1rem)',
+				'fluid-base': 'clamp(1rem, 2.5vw, 1.125rem)',
+				'fluid-lg': 'clamp(1.125rem, 3vw, 1.25rem)',
+				'fluid-xl': 'clamp(1.25rem, 3.5vw, 1.5rem)',
+				'fluid-2xl': 'clamp(1.5rem, 4vw, 2rem)',
+				'fluid-3xl': 'clamp(1.875rem, 5vw, 2.5rem)',
+				'fluid-4xl': 'clamp(2.25rem, 6vw, 3rem)',
+				'fluid-hero': 'clamp(3rem, 8vw, 12rem)',
+			},
 			keyframes: {
 				'accordion-down': {
 					from: {
@@ -113,6 +123,22 @@ export default {
 				'bounce-gentle': {
 					'0%, 100%': { transform: 'translateY(0)' },
 					'50%': { transform: 'translateY(-10px)' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'glow-pulse': {
+					'0%, 100%': { opacity: '1', filter: 'brightness(1)' },
+					'50%': { opacity: '0.8', filter: 'brightness(1.2)' }
+				},
+				'text-reveal': {
+					'0%': { opacity: '0', transform: 'translateY(100%)' },
+					'100%': { opacity: '1', transform: 'translateY(0%)' }
+				},
+				'line-draw': {
+					'0%': { strokeDashoffset: '1000' },
+					'100%': { strokeDashoffset: '0' }
 				}
 			},
 			animation: {
@@ -123,6 +149,10 @@ export default {
 				'slide-in-left': 'slide-in-left 0.8s ease-out',
 				'slide-in-right': 'slide-in-right 0.8s ease-out',
 				'bounce-gentle': 'bounce-gentle 2s ease-in-out infinite',
+				'float': 'float 3s ease-in-out infinite',
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+				'text-reveal': 'text-reveal 0.8s ease-out',
+				'line-draw': 'line-draw 2s ease-out',
 			}
 		}
 	},
