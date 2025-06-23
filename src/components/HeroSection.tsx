@@ -18,7 +18,6 @@ const HeroSection = () => {
       setCurrentImage((prev) => (prev + 1) % maskImages.length);
     }, 4000);
 
-    // Trigger text animation after component mounts
     const textTimer = setTimeout(() => {
       setTextVisible(true);
     }, 500);
@@ -31,9 +30,6 @@ const HeroSection = () => {
 
   return (
     <section className="min-h-screen bg-deziro-navy relative overflow-hidden">
-      {/* Background Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-deziro-navy via-deziro-navy/95 to-deziro-navy" />
-      
       {/* Navigation */}
       <nav className="absolute top-0 left-0 right-0 z-20 p-8">
         <div className="flex justify-between items-center">
@@ -73,19 +69,17 @@ const HeroSection = () => {
               {['DESIGNING', 'FUTURE', 'ENVIRONMENTS'].map((word, index) => (
                 <span
                   key={word}
-                  className={`block font-black transition-all duration-1000 ease-out
+                  className={`block font-black transition-all duration-1000 ease-out text-white
                     text-[clamp(3rem,8vw,12rem)] md:text-[clamp(4rem,10vw,14rem)] lg:text-[clamp(6rem,12vw,16rem)]
                     ${textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
                   `}
                   style={{
-                    backgroundImage: `url(${maskImages[currentImage]})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
+                    transitionDelay: `${index * 200}ms`,
+                    textShadow: '0 0 40px rgba(23, 125, 255, 0.3)',
+                    background: `linear-gradient(135deg, #ffffff 0%, #177dff 50%, #03368d 100%)`,
                     backgroundClip: 'text',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
-                    transitionDelay: `${index * 200}ms`,
-                    filter: 'contrast(1.2) brightness(1.1)'
                   }}
                 >
                   {word}

@@ -39,7 +39,7 @@ const VisualScrollSection = () => {
           }`}
         >
           <img
-            src="/service-scale-modeling.jpg"
+            src="/photo-1473091534298-04dcbce3278c.jpg"
             alt="Scale Modeling"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
@@ -69,7 +69,7 @@ const VisualScrollSection = () => {
           }`}
         >
           <img
-            src="/service-lighting.jpg"
+            src="/photo-1581090464777-f3220bbe1b8b.jpg"
             alt="Conceptual Lighting"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />

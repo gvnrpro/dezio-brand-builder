@@ -26,22 +26,22 @@ const ServicesGrid = () => {
     { 
       title: 'ARCHITECTURAL\nSOLUTIONS', 
       color: 'bg-deziro-blue',
-      image: '/service-architecture.jpg',
+      image: '/photo-1487958449943-2429e8be8625.jpg',
       delay: '0ms' 
     },
     { 
       title: 'INTERIOR\nDESIGN', 
       color: 'bg-deziro-dark-blue',
-      image: '/service-interior.jpg', 
+      image: '/photo-1721322800607-8c38375eef04.jpg', 
       delay: '100ms' 
     }
   ];
 
   const services = [
-    { title: '3D MODELING', image: '/service-3d-modeling.jpg', color: 'bg-deziro-medium-blue', delay: '200ms' },
-    { title: '3D WALKTHROUGH', image: '/service-3d-walkthrough.jpg', color: 'bg-deziro-dark-blue', delay: '300ms' },
-    { title: 'SCALE MODELING', image: '/service-scale-modeling.jpg', color: 'bg-deziro-blue', delay: '400ms' },
-    { title: 'LIGHTING DESIGN', image: '/service-lighting.jpg', color: 'bg-deziro-navy', delay: '500ms' }
+    { title: '3D MODELING', image: '/photo-1518770660439-4636190af475.jpg', color: 'bg-deziro-medium-blue', delay: '200ms' },
+    { title: '3D WALKTHROUGH', image: '/photo-1498050108023-c5249f4df085.jpg', color: 'bg-deziro-dark-blue', delay: '300ms' },
+    { title: 'SCALE MODELING', image: '/photo-1473091534298-04dcbce3278c.jpg', color: 'bg-deziro-blue', delay: '400ms' },
+    { title: 'LIGHTING DESIGN', image: '/photo-1581090464777-f3220bbe1b8b.jpg', color: 'bg-deziro-navy', delay: '500ms' }
   ];
 
   return (
