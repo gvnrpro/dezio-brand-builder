@@ -45,43 +45,40 @@ const HeroSection = () => {
           <h1 className="text-7xl md:text-9xl lg:text-[12rem] font-black text-white leading-none">
             <div className="relative">
               <span
-                className="block"
+                className="block transition-opacity duration-1000"
                 style={{
                   backgroundImage: `url(${maskImages[currentImage]})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundClip: 'text',
                   WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  animation: 'fadeIn 1s ease-in-out'
+                  WebkitTextFillColor: 'transparent'
                 }}
               >
                 DESIGNING
               </span>
               <span
-                className="block"
+                className="block transition-opacity duration-1000"
                 style={{
                   backgroundImage: `url(${maskImages[currentImage]})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundClip: 'text',
                   WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  animation: 'fadeIn 1s ease-in-out'
+                  WebkitTextFillColor: 'transparent'
                 }}
               >
                 FUTURE
               </span>
               <span
-                className="block"
+                className="block transition-opacity duration-1000"
                 style={{
                   backgroundImage: `url(${maskImages[currentImage]})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundClip: 'text',
                   WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  animation: 'fadeIn 1s ease-in-out'
+                  WebkitTextFillColor: 'transparent'
                 }}
               >
                 ENVIRONMENTS
@@ -96,13 +93,6 @@ const HeroSection = () => {
         <div className="text-white/70 text-sm font-medium mb-2">SCROLL</div>
         <ChevronDown className="w-6 h-6 text-white/70 animate-bounce-gentle mx-auto" />
       </div>
-
-      <style jsx>{`
-        @keyframes fadeIn {
-          from { opacity: 0.7; }
-          to { opacity: 1; }
-        }
-      `}</style>
     </section>
   );
 };
