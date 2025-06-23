@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -21,6 +20,7 @@ export default {
 		extend: {
 			fontFamily: {
 				'poppins': ['Poppins', 'sans-serif'],
+				'grotesk': ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -139,6 +139,20 @@ export default {
 				'line-draw': {
 					'0%': { strokeDashoffset: '1000' },
 					'100%': { strokeDashoffset: '0' }
+				},
+				'image-mask': {
+					'0%': { 
+						backgroundPosition: '0% 50%',
+						filter: 'contrast(1) brightness(1)'
+					},
+					'50%': { 
+						backgroundPosition: '100% 50%',
+						filter: 'contrast(1.2) brightness(1.1)'
+					},
+					'100%': { 
+						backgroundPosition: '0% 50%',
+						filter: 'contrast(1) brightness(1)'
+					}
 				}
 			},
 			animation: {
@@ -153,6 +167,7 @@ export default {
 				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
 				'text-reveal': 'text-reveal 0.8s ease-out',
 				'line-draw': 'line-draw 2s ease-out',
+				'image-mask': 'image-mask 4s ease-in-out infinite',
 			}
 		}
 	},
