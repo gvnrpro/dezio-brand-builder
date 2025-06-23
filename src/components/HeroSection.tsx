@@ -71,28 +71,21 @@ const HeroSection = () => {
               {['SHAPING', 'SPACES FOR', 'TOMORROW'].map((line, index) => (
                 <div key={line} className="relative overflow-hidden">
                   <span
-                    className={`block font-black transition-all duration-1200 ease-out
-                      text-[clamp(2.5rem,12vw,8rem)] lg:text-[clamp(4rem,14vw,12rem)]
-                      ${textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
-                    `}
-                    style={{
-                      transitionDelay: `${index * 300}ms`,
-                      fontFamily: '"Space Grotesk", "Inter", sans-serif',
-                      fontWeight: '900',
-                      backgroundImage: `url(${maskImages[currentImage]})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      WebkitBackgroundClip: 'text',
-                      backgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      color: 'transparent',
-                      filter: 'contrast(1.2) brightness(1.1)',
-                      textShadow: 'none',
-                      animation: maskLoaded ? 'animate-bg-pan 15s linear infinite' : 'none',
-                    }}
-                  >
-                    {line}
-                  </span>
+  className={`block font-black transition-all duration-1200 ease-out
+    text-[clamp(2.5rem,12vw,8rem)] lg:text-[clamp(4rem,14vw,12rem)]
+    ${textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
+    text-clip-mask animate-bg-pan font-grotesk
+  `}
+  style={{
+    backgroundImage: `url(${maskImages[currentImage]})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    filter: 'contrast(1.2) brightness(1.1)',
+    textShadow: '0 0 40px rgba(23, 125, 255, 0.3)',
+  }}
+>
+  {line}
+</span>
                 </div>
               ))}
             </div>
