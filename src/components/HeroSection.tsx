@@ -1,4 +1,3 @@
-
 import { ChevronDown } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
@@ -6,10 +5,10 @@ const HeroSection = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [textVisible, setTextVisible] = useState(false);
   const [maskLoaded, setMaskLoaded] = useState(false);
-  
+
   const maskImages = [
     '/lovable-uploads/service-architecture.jpg',
-    '/lovable-uploads/service-interior.jpg', 
+    '/lovable-uploads/service-interior.jpg',
     '/lovable-uploads/service-3d-modeling.jpg',
     '/lovable-uploads/service-lighting.jpg'
   ];
@@ -78,18 +77,18 @@ const HeroSection = () => {
                     `}
                     style={{
                       transitionDelay: `${index * 300}ms`,
-                      fontFamily: '"Space Grotesk", "Inter", system-ui, sans-serif',
+                      fontFamily: '"Space Grotesk", "Inter", sans-serif',
                       fontWeight: '900',
-                      background: maskLoaded ? `url(${maskImages[currentImage]})` : 'linear-gradient(135deg, #ffffff 0%, #177dff 50%, #03368d 100%)',
+                      backgroundImage: `url(${maskImages[currentImage]})`,
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
-                      backgroundClip: 'text',
                       WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: maskLoaded ? 'transparent' : 'white',
-                      color: maskLoaded ? 'transparent' : 'white',
+                      backgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      color: 'transparent',
                       filter: 'contrast(1.2) brightness(1.1)',
-                      textShadow: maskLoaded ? 'none' : '0 0 40px rgba(23, 125, 255, 0.3)',
-                      transition: 'all 1.5s ease-in-out',
+                      textShadow: 'none',
+                      animation: maskLoaded ? 'animate-bg-pan 15s linear infinite' : 'none',
                     }}
                   >
                     {line}
@@ -98,13 +97,13 @@ const HeroSection = () => {
               ))}
             </div>
           </h1>
-          
+
           {/* Subtitle */}
           <div className={`mt-6 md:mt-8 transition-all duration-1000 ease-out delay-1000 ${
             textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
-            <p className="text-white/80 text-base md:text-xl font-medium tracking-wide max-w-2xl mx-auto px-4" 
-               style={{ fontFamily: '"Space Grotesk", "Inter", system-ui, sans-serif' }}>
+            <p className="text-white/80 text-base md:text-xl font-medium tracking-wide max-w-2xl mx-auto px-4"
+              style={{ fontFamily: '"Space Grotesk", "Inter", sans-serif' }}>
               Architectural Solutions • Interior Design • 3D Innovation
             </p>
           </div>
@@ -117,7 +116,7 @@ const HeroSection = () => {
         <ChevronDown className="w-6 h-6 text-white/70 animate-bounce-gentle mx-auto" />
       </div>
 
-      {/* Enhanced Parallax Elements */}
+      {/* Parallax Elements */}
       <div className="absolute top-1/4 left-4 md:left-10 w-px h-20 md:h-32 bg-gradient-to-b from-deziro-blue/40 to-transparent animate-pulse" />
       <div className="absolute bottom-1/4 right-4 md:right-10 w-px h-16 md:h-24 bg-gradient-to-t from-deziro-blue/40 to-transparent animate-pulse delay-500" />
       <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-deziro-blue/60 rounded-full animate-ping" style={{ animationDelay: '2s' }} />
