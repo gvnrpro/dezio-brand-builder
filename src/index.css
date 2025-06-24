@@ -111,3 +111,62 @@
 .smooth-transition {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* Hero Section Animations */
+@keyframes bg-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes text-glow {
+  0%, 100% { filter: brightness(1) contrast(1); }
+  50% { filter: brightness(1.2) contrast(1.1); }
+}
+
+@keyframes text-grow {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes klein-glow {
+  0%, 100% { filter: drop-shadow(0 0 20px rgba(23, 125, 255, 0.3)); }
+  50% { filter: drop-shadow(0 0 40px rgba(23, 125, 255, 0.6)); }
+}
+
+@keyframes sweep-light {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes counter {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blueprint-float {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(20px); }
+}
+
+/* Highlight Words Animation */
+.highlight-word {
+  background: linear-gradient(135deg, #177dff 0%, #03368d 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  position: relative;
+  animation: text-glow 2s ease-in-out infinite alternate;
+}

@@ -19,70 +19,37 @@ const SplashScreen = () => {
   return (
     <div className="fixed inset-0 bg-black z-50 flex items-center justify-center overflow-hidden">
       <div className="relative">
-        {/* Klein Bottle Logo */}
-        <div className="relative w-48 h-48 mx-auto mb-8">
+        {/* Deziro Logo */}
+        <div className="relative w-48 h-48 mx-auto mb-8 flex items-center justify-center">
           <div
-            className={`w-full h-full transition-all duration-2000 ease-out ${
-              animationPhase >= 1 ? 'opacity-100 rotate-y-12' : 'opacity-0'
+            className={`transition-all duration-2000 ease-out ${
+              animationPhase >= 1 ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
             }`}
             style={{
               transform: animationPhase >= 1 ? 'rotateY(12deg) rotateX(5deg)' : 'rotateY(0deg)',
               filter: 'drop-shadow(0 20px 40px rgba(23, 125, 255, 0.3))',
             }}
           >
-            <svg
-              width="192"
-              height="192"
-              viewBox="0 0 200 200"
-              className="w-full h-full"
-            >
-              {/* Klein Bottle Path */}
-              <path
-                d="M100 40 C140 40, 160 60, 160 100 C160 120, 150 130, 130 130 C110 130, 90 120, 90 100 C90 90, 95 85, 100 85 C105 85, 110 90, 110 100 C110 110, 105 115, 100 115 C95 115, 90 110, 90 100 C90 80, 110 60, 130 60 C150 60, 170 80, 170 100 C170 140, 140 160, 100 160 C60 160, 40 140, 40 100 C40 60, 60 40, 100 40 Z"
-                fill="none"
-                stroke="url(#kleinGradient)"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className={`transition-all duration-1500 ${
-                  animationPhase >= 1 ? 'opacity-100' : 'opacity-0'
-                }`}
-                style={{
-                  strokeDasharray: '1000',
-                  strokeDashoffset: animationPhase >= 1 ? '0' : '1000',
-                  animation: animationPhase >= 2 ? 'klein-glow 2s ease-in-out infinite' : 'none',
-                }}
-              />
+            <img
+              src="/lovable-uploads/7a23b783-7d17-42f4-b517-38dd74e29ecf.png"
+              alt="Deziro Designs Logo"
+              className="w-32 h-32 object-contain"
+              style={{
+                filter: 'brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(212deg) brightness(102%) contrast(97%)',
+                animation: animationPhase >= 2 ? 'klein-glow 2s ease-in-out infinite' : 'none',
+              }}
+            />
 
-              {/* Reflective Sweep */}
-              <rect
-                x="0"
-                y="0"
-                width="200"
-                height="200"
-                fill="url(#sweepGradient)"
-                className={`transition-all duration-1000 ${
-                  animationPhase >= 2 ? 'opacity-60' : 'opacity-0'
-                }`}
-                style={{
-                  animation: animationPhase >= 2 ? 'sweep-light 2s ease-in-out' : 'none',
-                }}
-              />
-
-              <defs>
-                <linearGradient id="kleinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#177dff" />
-                  <stop offset="50%" stopColor="#03368d" />
-                  <stop offset="100%" stopColor="#177dff" />
-                </linearGradient>
-
-                <linearGradient id="sweepGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="transparent" />
-                  <stop offset="50%" stopColor="rgba(255,255,255,0.4)" />
-                  <stop offset="100%" stopColor="transparent" />
-                </linearGradient>
-              </defs>
-            </svg>
+            {/* Reflective Sweep */}
+            <div
+              className={`absolute inset-0 transition-all duration-1000 ${
+                animationPhase >= 2 ? 'opacity-60' : 'opacity-0'
+              }`}
+              style={{
+                background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%)',
+                animation: animationPhase >= 2 ? 'sweep-light 2s ease-in-out' : 'none',
+              }}
+            />
           </div>
 
           {/* Pulse Glow Effect */}

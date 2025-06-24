@@ -39,7 +39,7 @@ const VisualScrollSection = () => {
           }`}
         >
           <img
-            src="/photo-1473091534298-04dcbce3278c.jpg"
+            src="/lovable-uploads/bd26dbc9-d75b-4b45-ad5b-c78bb0e85e79.png"
             alt="Scale Modeling"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
@@ -48,10 +48,10 @@ const VisualScrollSection = () => {
             <div className="p-12 w-full">
               <div className="mb-4">
                 <div className="w-16 h-0.5 bg-white mb-4" />
-                <h3 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
+                <h3 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight font-grotesk">
                   Scale Modeling
                 </h3>
-                <p className="text-white/90 text-lg font-medium max-w-md leading-relaxed">
+                <p className="text-white/90 text-lg font-medium max-w-md leading-relaxed font-poppins">
                   Precision-crafted architectural models that bring concepts to life with meticulous attention to detail.
                 </p>
               </div>
@@ -69,7 +69,7 @@ const VisualScrollSection = () => {
           }`}
         >
           <img
-            src="/photo-1581090464777-f3220bbe1b8b.jpg"
+            src="/lovable-uploads/5c31bf1b-90e6-4b69-b10a-c6d8e8cf1e88.png"
             alt="Conceptual Lighting"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
@@ -78,10 +78,10 @@ const VisualScrollSection = () => {
             <div className="p-12 w-full">
               <div className="mb-4">
                 <div className="w-16 h-0.5 bg-white mb-4" />
-                <h3 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
+                <h3 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight font-grotesk">
                   Conceptual Lighting
                 </h3>
-                <p className="text-white/90 text-lg font-medium max-w-md leading-relaxed">
+                <p className="text-white/90 text-lg font-medium max-w-md leading-relaxed font-poppins">
                   Illuminating spaces with artistic vision that transforms environments through innovative lighting design.
                 </p>
               </div>

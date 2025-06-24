@@ -35,9 +35,9 @@ const HeroSection = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-3 md:space-x-4">
             <img 
-              src="/klein-bottle-logo.svg" 
-              alt="Deziro Logo" 
-              className="w-7 h-7 md:w-8 md:h-8 text-deziro-blue filter brightness-0 invert"
+              src="/lovable-uploads/7a23b783-7d17-42f4-b517-38dd74e29ecf.png" 
+              alt="Deziro Designs Logo" 
+              className="w-8 h-8 md:w-10 md:h-10"
             />
             <div className="text-white font-black text-xl md:text-2xl tracking-wide font-grotesk">
               DEZIRO
@@ -82,11 +82,12 @@ const HeroSection = () => {
                     backgroundSize: '300% 300%',
                     backgroundClip: 'text',
                     WebkitBackgroundClip: 'text',
-                    color: 'transparent',
+                    color: '#177dff', // Fallback color for better visibility
                     WebkitTextFillColor: 'transparent',
                     animationDelay: `${index * 0.3}s`,
                     animation: 'bg-shift 4s ease-in-out infinite, text-glow 2s ease-in-out infinite alternate',
                     filter: 'contrast(1.2) brightness(1.1)',
+                    textShadow: '0 0 30px rgba(23, 125, 255, 0.5)', // Added glow for visibility
                   }}
                 >
                   {line}
@@ -100,7 +101,7 @@ const HeroSection = () => {
             textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             <p className="text-white/90 text-lg md:text-2xl font-medium tracking-wide max-w-4xl mx-auto px-4 font-poppins">
-              <span className="animate-typewriter">
+              <span className="inline-block overflow-hidden whitespace-nowrap border-r-2 border-deziro-blue animate-typewriter">
                 Architectural Solutions • Interior Design • 3D Innovation
               </span>
             </p>
