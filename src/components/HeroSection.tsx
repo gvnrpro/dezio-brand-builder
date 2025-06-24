@@ -1,3 +1,4 @@
+
 import { ChevronDown } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
@@ -63,29 +64,77 @@ const HeroSection = () => {
         </div>
       </nav>
 
+      {/* Dynamic Background Mask */}
+      <div className="absolute inset-0 z-10">
+        {maskImages.map((image, index) => (
+          <div
+            key={image}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentImage ? 'opacity-20' : 'opacity-0'
+            }`}
+            style={{
+              backgroundImage: `url(${image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              mixBlendMode: 'overlay',
+            }}
+          />
+        ))}
+      </div>
+
       {/* Main Content */}
-      <div className="absolute inset-0 flex items-center justify-center px-4">
+      <div className="absolute inset-0 flex items-center justify-center px-4 z-20">
         <div className="text-center relative">
           <h1 className="leading-[0.85] relative">
             <div className="relative">
               {['SHAPING', 'SPACES FOR', 'TOMORROW'].map((line, index) => (
                 <div key={line} className="relative overflow-hidden">
                   <span
-  className={`block font-black transition-all duration-1200 ease-out
-    text-[clamp(2.5rem,12vw,8rem)] lg:text-[clamp(4rem,14vw,12rem)]
-    ${textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
-    text-clip-mask animate-bg-pan font-grotesk
-  `}
-  style={{
-    backgroundImage: 'linear-gradient(135deg, #ffffff 0%, #177dff 50%, #03368d 100%)',
-    backgroundSize: '200% auto',
-    backgroundPosition: '0% 50%',
-    filter: 'contrast(1.2) brightness(1.1)',
-    textShadow: '0 0 40px rgba(23, 125, 255, 0.3)',
-  }}
->
-  {line}
-</span>
+                    className={`block font-black transition-all duration-1200 ease-out font-grotesk
+                      text-[clamp(2.5rem,12vw,8rem)] lg:text-[clamp(4rem,14vw,12rem)]
+                      ${textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
+                    `}
+                    style={{
+                      background: `linear-gradient(
+                        135deg,
+                        #ffffff 0%,
+                        #177dff 25%,
+                        #03368d 50%,
+                        #177dff 75%,
+                        #ffffff 100%
+                      )`,
+                      backgroundSize: '400% 400%',
+                      backgroundClip: 'text',
+                      WebkitBackgroundClip: 'text',
+                      color: 'transparent',
+                      WebkitTextFillColor: 'transparent',
+                      animation: `bg-pan 8s ease-in-out infinite, text-shimmer 3s ease-in-out infinite`,
+                      filter: 'contrast(1.3) brightness(1.2)',
+                      textShadow: '0 0 60px rgba(23, 125, 255, 0.4)',
+                      animationDelay: `${index * 0.2}s`,
+                    }}
+                  >
+                    {line}
+                  </span>
+                  
+                  {/* Glitch Effect Overlay */}
+                  <span
+                    className={`absolute inset-0 block font-black font-grotesk
+                      text-[clamp(2.5rem,12vw,8rem)] lg:text-[clamp(4rem,14vw,12rem)]
+                      ${textVisible ? 'opacity-100' : 'opacity-0'}
+                    `}
+                    style={{
+                      background: 'linear-gradient(135deg, #ff0040 0%, #00ff80 100%)',
+                      backgroundClip: 'text',
+                      WebkitBackgroundClip: 'text',
+                      color: 'transparent',
+                      WebkitTextFillColor: 'transparent',
+                      animation: 'glitch 4s infinite',
+                      animationDelay: `${index * 0.3}s`,
+                    }}
+                  >
+                    {line}
+                  </span>
                 </div>
               ))}
             </div>
@@ -95,8 +144,7 @@ const HeroSection = () => {
           <div className={`mt-6 md:mt-8 transition-all duration-1000 ease-out delay-1000 ${
             textVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
-            <p className="text-white/80 text-base md:text-xl font-medium tracking-wide max-w-2xl mx-auto px-4"
-              style={{ fontFamily: '"Space Grotesk", "Inter", sans-serif' }}>
+            <p className="text-white/80 text-base md:text-xl font-medium tracking-wide max-w-2xl mx-auto px-4 font-grotesk">
               Architectural Solutions • Interior Design • 3D Innovation
             </p>
           </div>
@@ -104,16 +152,20 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll Cue */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center z-20">
         <div className="text-white/70 text-sm font-medium mb-2 tracking-wide">SCROLL</div>
         <ChevronDown className="w-6 h-6 text-white/70 animate-bounce-gentle mx-auto" />
       </div>
 
-      {/* Parallax Elements */}
-      <div className="absolute top-1/4 left-4 md:left-10 w-px h-20 md:h-32 bg-gradient-to-b from-deziro-blue/40 to-transparent animate-pulse" />
-      <div className="absolute bottom-1/4 right-4 md:right-10 w-px h-16 md:h-24 bg-gradient-to-t from-deziro-blue/40 to-transparent animate-pulse delay-500" />
-      <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-deziro-blue/60 rounded-full animate-ping" style={{ animationDelay: '2s' }} />
-      <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white/40 rounded-full animate-ping" style={{ animationDelay: '3s' }} />
+      {/* Enhanced Parallax Elements */}
+      <div className="absolute top-1/4 left-4 md:left-10 w-px h-20 md:h-32 bg-gradient-to-b from-deziro-blue/40 to-transparent animate-pulse z-10" />
+      <div className="absolute bottom-1/4 right-4 md:right-10 w-px h-16 md:h-24 bg-gradient-to-t from-deziro-blue/40 to-transparent animate-pulse delay-500 z-10" />
+      <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-deziro-blue/60 rounded-full animate-ping z-10" style={{ animationDelay: '2s' }} />
+      <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white/40 rounded-full animate-ping z-10" style={{ animationDelay: '3s' }} />
+      
+      {/* Floating Geometric Elements */}
+      <div className="absolute top-1/5 right-1/5 w-2 h-2 border border-deziro-blue/30 rotate-45 animate-spin-slow z-10" />
+      <div className="absolute bottom-1/3 left-1/6 w-3 h-3 border border-white/20 animate-pulse z-10" />
     </section>
   );
 };
